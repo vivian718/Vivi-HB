@@ -1,0 +1,350 @@
+<elements>
+    <element name="Dragonling" type="Race" source="Vivi-HB" id="ID_Vivi_VVHB_Race_Dragonling">
+        <description>
+            <p class="Flavor">Born from the union of dragons and humanoids, dragonlings mix the best of both worlds, having the strength and constitution of their dragon parents and the more humanoid appearance of their non-dragon parent.</p>
+            <p>
+            <span class="feature">Ability Score Increase.</span>Your Constitution score increases by 1.<br />
+            <span class="feature">Ability Score Increase.</span>Your Strength Score increases by 1.<br/>
+            <span class="feature">Age.</span>Dragonlings mature at about the same rate as their non-dragon parent, but have lifespans comperable to their dragon parent.<br />
+            <span class="feature">Alignment.</span>Dragonlings, tend toward the same alignment as their dragon parent (metalic=good, Chromatic=evil).<br />
+            <span class="feature">Size.</span>Dragonlings range from 4 to 8 feet tall. Your Size is Medium<br />
+            <span class="feature">Speed.</span>Your base walking speed is 35 feet. <br />
+            <span class="feature">Languages.</span>You can speak, read, and write Common, Draconic, and one other language of your choosing.<br />
+            <span class="feature">Subraces.</span> Dragonlings, like Dragons come in 2 main "types" Metalic and Chromatic, with 5 subtypes within each type.
+            </p>
+            <p> <h4>Character Creation Tips: </h4> </p>
+            <p> <b>Language: </b> when selecting your third language, it is recomended to choose the language spoken by your non-dragon parent. </p>
+            <p> <b>Names: </b> when choosing a name you may choose to use draconic or humanoid naming conventions. Draconic names are commonly connected to the type of dragon (color/variety). </p>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <select type="Race Variant" name="Dragon Type" supports="Dragonling" />
+            <stat name="innate speed" value="35" bonus="base" />
+            <stat name="constitution" value="1" />
+            <stat name="strength" value="1" />
+            <grant type="Size" id="ID_SIZE_MEDIUM" />
+            <grant type="Language" id="ID_LANGUAGE_DRACONIC" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <select type="Language" name="Humanoid language" supports="Standard||Exotic" />
+        </rules>
+    </element>
+
+    <element name="Metalic" type="Race Variant" source="ViviHB" id="ID_Vivi_VVHB_Dragon_Type_Metalic">
+        <supports>Dragonling</supports>
+        <description>
+            <p>
+            <span class="feature"> Ability Score Increase. </span> Your Strength Score Increases by 2 rather than 1
+            </p>
+        </description>
+        <sheet>
+            <description>Metalic Dragonlings gain increased strength from their draconic parent</description>
+        </sheet>
+        <sheet display="false" />
+            <rules>
+                <stat name="strength" value="1" />
+                <select type="Sub Race" name="Metalic Type" supports="Dragonling, Metalic" />
+            </rules>
+    </element>
+
+    <element name="Chromatic" type="Race Variant" source="ViviHB" id="ID_Vivi_VVHB_Dragon_Type_Chromatic">
+        <supports>Dragonling</supports>
+        <description>
+            <p>
+            <span class="feature"> Ability Score Increase. </span> Your Constitution Score Increases by 2 rather than 1
+            </p>
+        </description>
+        <sheet>
+            <description>Chromatic Dragonlings gain an increased resiliancy from their draconic parent </description>
+        </sheet>
+        <sheet display="false" />
+            <rules>
+                <stat name="constitution" value="1" />
+                <select type="Sub Race" name="Chromatic Type" supports="Dragonling, Chromatic" />
+            </rules>
+    </element>
+
+    <element name="Black" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Chromatic_Acid">
+        <supports>Dragonling, Chromatic</supports>
+        <description>
+            <p>
+            You are the child of a black dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to damage from acidic sources. 
+            You can breathe acidic energy in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a black dragon, you are highly resistant to damage from acidic sources, and have the ability to exhale acidic energy 2/ Long Rest </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />   
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Acid" />
+        </rules>
+    </element>
+
+    <element name="Copper" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Metalic_Acid">
+        <supports>Dragonling, Metalic</supports>
+        <description>
+            <p>
+            You are the child of a copper dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to damage from acidic sources. 
+            You can breathe acidic energy in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a copper dragon, you find yourself highly resistant to damage from acidic sources, as well as being able to exhale acidic energy 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_ACID" />   
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Acid" />
+        </rules>
+    </element>
+
+    <element name="White" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Chromatic_Cold">
+        <supports>Dragonling, Chromatic </supports>
+        <description>
+            <p>
+            You are the child of a white dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to cold damage. 
+            You can breathe cold energy in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a white dragon, you find yourself highly resistant to cold damage, as well as being able to exhale a burst of extreme cold energy 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />   
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Cold" />
+        </rules>
+    </element>
+
+    <element name="Silver" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Metalic_Cold">
+        <supports>Dragonling, Metalic </supports>
+        <description>
+            <p>
+            You are the child of a silver dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to cold damage. 
+            You can breathe cold energy in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a silver dragon, you find yourself highly resistant to cold damage, as well as being able to exhale a burst of extreme cold energy 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_COLD" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Cold" />
+        </rules>
+    </element>
+
+    <element name="Red" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Chromatic_Fire">
+        <supports> Dragonling, Chromatic </supports>
+        <description>
+            <p>
+            You are the child of a red dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to fire damage. 
+            You can breathe fire in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a red dragon, you find yourself highly resistant to fire damage, as well as being able to exhale fire 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Fire" />
+
+        </rules>
+    </element>
+
+    <element name="Brass" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Metalic_Fire">
+        <supports> Dragonling, Metalic </supports>
+        <description>
+            <p>
+            You are the child of a brass dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to fire damage. 
+            You can breathe fire in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a brass dragon, you find yourself highly resistant to fire damage, as well as being able to exhale fire 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_FIRE" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Fire" />
+        </rules>
+    </element>
+
+    <element name="Blue" type="Sub Race" source="viviHB" id="ID_Vivi_VVHB_Chromatic_lightning">
+        <supports> Dragonling, Chromatic </supports>
+        <description>
+            <p>
+            You are the child of a blue dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to lightning damage. 
+            You can breathe lightning in a 5x30ft line. 
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a blue dragon, you find yourself highly resistant to lightning damage, as well as being able to exhale lightning 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Lightning" />
+        </rules>
+    </element>
+
+    <element name="Bronze" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Metalic_lightning">
+        <supports> Dragonling, Metalic </supports>
+        <description>
+            <p>
+            You are the child of a bronze dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to lightning damage. 
+            You can breathe lightning in a 5x30ft line. 
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a bronze dragon, you find yourself highly resistant to lightning damage, as well as being able to exhale lightning 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_LIGHTNING" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Lightning" />
+        </rules>
+    </element>
+
+    <element name="Green" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Chromatic_Poison">
+        <supports> Dragonling, Chromatic </supports>
+        <description>
+            <p>
+            You are the child of a green dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to poison damage. 
+            You can breathe poison in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a green dragon, you find yourself highly resistant to poison damage, as well as being able to exhale poison gas 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_POISON" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Poison" />
+        </rules>
+    </element>
+
+    <element name="Gold" type="Sub Race" source="ViviHB" id="ID_Vivi_VVHB_Metalic_Radiant">
+        <supports> Dragonling, Metalic </supports>
+        <description>
+            <p>
+            You are the child of a gold dragon and a humanoid, your unique parentage grants you many special traits.
+            You are highly resistant to radiant damage. 
+            You can breathe radiant energy in a 5x30ft line.
+            </p>
+        </description>
+        <sheet>
+            <description>The child of a gold dragon, you find yourself highly resistant to radiant damage, as well as being able to exhale radiant energy 2/ long rest. </description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_DAMAGE_RESISTANCE_RADIANT" />  
+            <grant type="Racial Trait" id="ID_Vivi_VVHB_Breath_Radiant" />
+        </rules>
+    </element>
+
+
+
+    <element name="Breath Weapon" type="Racial Trait" source="ViviHB" id="ID_Vivi_VVHB_Breath_Acid">
+        <description> Test </description>
+        <sheet action="Action" usage="2/ Long Rest">
+            <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} acid damage in a 5x30ft line. DC {{breath-weapon:dc}}</description>
+        </sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+    </element>
+
+    <element name="Breath Weapon" type="Racial Trait" source="ViviHB" id="ID_Vivi_VVHB_Breath_Cold">
+        <description> Test </description>
+        <sheet action="Action" usage="2/ Long Rest">
+            <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} cold damage in a 5x30ft line. DC {{breath-weapon:dc}}</description>
+        </sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+    </element>
+
+    <element name="Breath Weapon" type="Racial Trait" source="ViviHB" id="ID_Vivi_VVHB_Breath_Fire">
+        <description> Test </description>
+        <sheet action="Action" usage="2/ Long Rest">
+            <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} Fire damage in a 5x30ft line. DC {{breath-weapon:dc}}</description>
+        </sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+    </element>
+
+    <element name="Breath Weapon" type="Racial Trait" source="ViviHB" id="ID_Vivi_VVHB_Breath_Lightning">
+        <description> Test </description>
+        <sheet action="Action" usage="2/ Long Rest">
+            <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} lightning damage in a 5x30ft line. DC {{breath-weapon:dc}}</description>
+        </sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+    </element>
+
+    <element name="Breath Weapon" type="Racial Trait" source="ViviHB" id="ID_Vivi_VVHB_Breath_Poison">
+        <description> Test </description>
+        <sheet action="Action" usage="2/ Long Rest">
+            <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} poison damage in a 5x30ft line. DC {{breath-weapon:dc}}</description>
+        </sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+    </element>
+
+    <element name="Breath Weapon" type="Racial Trait" source="ViviHB" id="ID_Vivi_VVHB_Breath_Radiant">
+        <description> Test </description>
+        <sheet action="Action" usage="2/ Long Rest">
+            <description>Exhale destructive energy. Your breath weapon does {{breath-weapon:dice count}}d{{breath-weapon:dice size}} radiant damage in a 5x30ft line. DC {{breath-weapon:dc}}</description>
+        </sheet>
+		<rules>
+			<stat name="breath-weapon:dc" value="8" />
+			<stat name="breath-weapon:dc" value="constitution:modifier" />
+			<stat name="breath-weapon:dc" value="proficiency" />
+			<stat name="breath-weapon:dice size" value="6" bonus="dice" />
+			<stat name="breath-weapon:dice count" value="2" level="1" />
+			<stat name="breath-weapon:dice count" value="1" level="6" />
+			<stat name="breath-weapon:dice count" value="1" level="11" />
+			<stat name="breath-weapon:dice count" value="1" level="16" />
+		</rules>
+    </element>
+</elements>
