@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <index>
+  <info>
+    <update version="1.0">
+      <file name="Vivi-HB.Index" url="https://github.com/vivian718/Vivi-HB/edit/main/Vivi-HB.Index" />
+    </update>
+  </info> 
   <files>
     <file name="Dragonling.XML" url="https://github.com/vivian718/Vivi-HB/blob/main/Dragonlings.XML" />
   </files>
